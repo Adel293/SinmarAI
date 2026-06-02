@@ -247,7 +247,7 @@ const filteredChats = sessions.filter(
   };
 
   return (
-    <main className="min-h-screen bg-black text-white flex">
+    <main className="min-h-screen bg-black text-white flex flex-col md:flex-row">
       <aside className="w-72 border-r border-zinc-800 p-4 hidden md:flex flex-col bg-black">
 <button
   onClick={createNewChat}
@@ -299,11 +299,11 @@ const filteredChats = sessions.filter(
 
       <div className="flex-1">
         <div className="max-w-5xl mx-auto p-6 pb-40">
-          <div className="flex items-center justify-between mb-10">
-            <h1 className="text-4xl font-bold">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-10">
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight">
               Sinmar AI SQL Assistant
             </h1>
-<div className="mt-4 mb-6 flex items-center gap-3">
+<div className="mt-4 mb-6 flex flex-wrap items-center gap-3">
   <span className="text-zinc-400">
     Branch:
   </span>
@@ -331,7 +331,7 @@ const filteredChats = sessions.filter(
 </div>
             <button
               onClick={clearChat}
-              className="bg-zinc-800 hover:bg-zinc-700 transition px-5 py-3 rounded-2xl border border-zinc-700"
+              className="w-full md:w-auto bg-zinc-800 hover:bg-zinc-700 transition px-5 py-3 rounded-2xl border border-zinc-700"
             >
               Clear Chat
             </button>
@@ -350,8 +350,8 @@ const filteredChats = sessions.filter(
                 <div
                   className={
                     message.role === "user"
-                      ? "bg-white text-black p-4 rounded-2xl max-w-2xl shadow-lg"
-                      : "bg-zinc-900 border border-zinc-700 p-4 rounded-2xl max-w-3xl w-full shadow-lg"
+                      ? "bg-white text-black p-4 rounded-2xl max-w-full md:max-w-2xl shadow-lg"
+                      : "bg-zinc-900 border border-zinc-700 p-4 rounded-2xl max-w-full md:max-w-3xl w-full shadow-lg"
                   }
                 >
                   {message.role === "assistant" ? (
@@ -399,7 +399,7 @@ const filteredChats = sessions.filter(
           </div>
 
           <div className="sticky bottom-0 bg-black pt-4">
-            <div className="flex gap-4 items-end">
+            <div className="flex flex-col md:flex-row gap-4 items-stretch">
               <textarea
                 value={question}
                 onChange={(e) =>
