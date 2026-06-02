@@ -192,7 +192,7 @@ const filteredChats = sessions.filter(
       setLoading(true);
 
       const response = await axios.post(
-        "https://sinmarai-production.up.railway.app/generate-sql"
+        "https://sinmarai-production.up.railway.app/generate-sql",
         {
   question,
   messages: updatedMessages,
